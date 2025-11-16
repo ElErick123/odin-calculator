@@ -1,7 +1,14 @@
 const display = document.getElementById("display-screen");
 const numberButtons = document.querySelectorAll(".black-button");
 const operatorButtons = document.querySelectorAll(".orange-button, #remainder-button");
+const delBtn = document.getElementById("del-button");
+const clearBtn = document.getElementById("clear-button");
 const operators = ["+", "-", "x", "/", "%", "="];
+
+delBtn.addEventListener("click", () => {
+    display.textContent = display.textContent.slice(0, display.textContent.length - 1);
+    if (display.textContent === "") display.textContent = "0";
+});
 
 numberButtons.forEach((button) => {
     button.addEventListener("click", (e) => {
