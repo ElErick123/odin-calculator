@@ -40,7 +40,7 @@ body {
     border-radius: 25px;
 }
 
-.display p {
+.display span {
     display: flex;
     height: 100%;
     align-items: center;
