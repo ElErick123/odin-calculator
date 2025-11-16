@@ -52,24 +52,24 @@ operatorButtons.forEach((button) => {
 });
 
 function add(a, b) {
-    return a + b;
+    return parseFloat((a + b).toFixed(3));
 }
 
 function subtract(a, b) {
-    return a - b;
+    return parseFloat((a - b).toFixed(3))
 }
 
 function multiply(a, b) {
-    return a * b;
+    return parseFloat((a * b).toFixed(3))
 }
 
 function divide(a, b) {
     if (b === 0) return "ERROR";
-    return a / b;
+    return parseFloat((a / b).toFixed(3))
 }
 
 function remainder(a, b) {
-    return a % b;
+    return parseFloat((a % b).toFixed(3))
 }
 
 function operate(operator, a, b) {
