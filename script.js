@@ -10,6 +10,10 @@ delBtn.addEventListener("click", () => {
     if (display.textContent === "") display.textContent = "0";
 });
 
+clearBtn.addEventListener("click", () => {
+    display.textContent = "0";
+});
+
 numberButtons.forEach((button) => {
     button.addEventListener("click", (e) => {
         if (display.textContent === "0") {
