@@ -1,6 +1,6 @@
 const display = document.getElementById("display-screen");
 const numberButtons = document.querySelectorAll(".black-button");
-const operatorButtons = document.querySelectorAll(".orange-button");
+const operatorButtons = document.querySelectorAll(".orange-button, #remainder-button");
 const operators = ["+", "-", "x", "/", "%", "="];
 
 numberButtons.forEach((button) => {
@@ -48,6 +48,10 @@ function divide(a, b) {
     return a / b;
 }
 
+function remainder(a, b) {
+    return a % b;
+}
+
 function operate(operator, a, b) {
     switch (operator) {
         case "+":
@@ -61,6 +65,9 @@ function operate(operator, a, b) {
             break;
         case "/":
             display.textContent = divide(a, b);
+            break;
+        case "%":
+            display.textContent = remainder(a, b);
             break;
     }
 }
