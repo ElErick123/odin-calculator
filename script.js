@@ -1,9 +1,18 @@
 const display = document.getElementById("display-screen");
+const anyBtn = document.querySelectorAll("button");
 const numberButtons = document.querySelectorAll(".black-button");
 const operatorButtons = document.querySelectorAll(".orange-button, #remainder-button");
 const delBtn = document.getElementById("del-button");
 const clearBtn = document.getElementById("clear-button");
 const operators = ["+", "-", "x", "/", "%", "="];
+
+anyBtn.forEach((button) => {
+    button.addEventListener("click", () => {
+        if (display.textContent === "ERROR") {
+            display.textContent = "0";
+        }
+    });
+});
 
 delBtn.addEventListener("click", () => {
     display.textContent = display.textContent.slice(0, display.textContent.length - 1);
