@@ -2,6 +2,7 @@ const display = document.getElementById("display-screen");
 const anyBtn = document.querySelectorAll("button");
 const numberButtons = document.querySelectorAll(".black-button");
 const operatorButtons = document.querySelectorAll(".orange-button, #remainder-button");
+const dotBtn = document.getElementById("dot-button");
 const delBtn = document.getElementById("del-button");
 const clearBtn = document.getElementById("clear-button");
 const operators = ["+", "-", "x", "/", "%", "="];
