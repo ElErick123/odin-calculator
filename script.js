@@ -21,11 +21,25 @@ anyBtn.forEach((button) => {
 });
 
 delBtn.addEventListener("click", () => {
-
+    display.textContent = display.textContent.slice(0, display.textContent.length - 1);
+    for (let digit of display.textContent) {
+        if (operators.includes(digit)) {
+            operator = digit;
+        }
+        else {
+            operator = "";
+        }
+    }
+    if (display.textContent === "") {
+        display.textContent = "0";
+    }
 });
 
 clearBtn.addEventListener("click", () => {
     display.textContent = "0";
+    firstNum = 0;
+    secondNum = 0;
+    operator = "";
 });
 
 numberButtons.forEach((button) => {
