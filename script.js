@@ -107,14 +107,18 @@ operatorButtons.forEach((button) => {
 function operate(operator, a, b) {
     switch (operator) {
         case "+":
-
+            return showOnlyThreeDecimals(+a + +b);
         case "-":
-
+            return showOnlyThreeDecimals(+a - +b);
         case "x":
-
+            return showOnlyThreeDecimals(+a * +b);
         case "/":
-
+            if (b === "0") {
+                shouldResetDisplay = true;
+                return "ERROR";
+            }
+            return showOnlyThreeDecimals(+a / +b);
         case "%":
-
+            return showOnlyThreeDecimals(+a % +b);
     }
 }
