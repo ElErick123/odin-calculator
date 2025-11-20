@@ -24,7 +24,13 @@ clearBtn.addEventListener("click", () => {
 });
 
 numberButtons.forEach((button) => {
-
+    button.addEventListener("click", () => {
+        if (display.textContent === "0") {
+            display.textContent = button.textContent;
+            return;
+        }
+        display.textContent += button.textContent;
+    });
 });
 
 operatorButtons.forEach((button) => {
