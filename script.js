@@ -6,17 +6,16 @@ const delBtn = document.getElementById("del-button");
 const clearBtn = document.getElementById("clear-button");
 const operators = ["+", "-", "x", "/", "%", "="];
 
+dotBtn.addEventListener("click", () => {
+
+});
+
 anyBtn.forEach((button) => {
-    button.addEventListener("click", () => {
-        if (display.textContent === "ERROR") {
-            display.textContent = "0";
-        }
-    });
+
 });
 
 delBtn.addEventListener("click", () => {
-    display.textContent = display.textContent.slice(0, display.textContent.length - 1);
-    if (display.textContent === "") display.textContent = "0";
+
 });
 
 clearBtn.addEventListener("click", () => {
@@ -24,70 +23,24 @@ clearBtn.addEventListener("click", () => {
 });
 
 numberButtons.forEach((button) => {
-    button.addEventListener("click", (e) => {
-        if (display.textContent === "0") {
-            display.textContent = e.target.textContent;
-        }
-        else {
-            display.textContent += e.target.textContent;
-        }
-    });
+
 });
 
 operatorButtons.forEach((button) => {
-    button.addEventListener("click", (e) => {
-        const lastDigit = display.textContent.slice(display.textContent.length - 1, display.textContent.length);
-        if (operators.includes(lastDigit)) {
-            return;
-        }
-        for(let digit of display.textContent) {
-            if (operators.includes(digit)) {
-                const numbers = display.textContent.split(digit);
-                const operator = digit;
-                operate(operator, +numbers[0], +numbers[1]);
-            }
-        }
-        if (e.target.textContent !== "=") display.textContent += e.target.textContent;
-    });
+
 });
-
-function add(a, b) {
-    return parseFloat((a + b).toFixed(3));
-}
-
-function subtract(a, b) {
-    return parseFloat((a - b).toFixed(3))
-}
-
-function multiply(a, b) {
-    return parseFloat((a * b).toFixed(3))
-}
-
-function divide(a, b) {
-    if (b === 0) return "ERROR";
-    return parseFloat((a / b).toFixed(3))
-}
-
-function remainder(a, b) {
-    return parseFloat((a % b).toFixed(3))
-}
 
 function operate(operator, a, b) {
     switch (operator) {
         case "+":
-            display.textContent = add(a, b);
-            break;
+
         case "-":
-            display.textContent = subtract(a, b);
-            break;
+
         case "x":
-            display.textContent = multiply(a, b);
-            break;
+
         case "/":
-            display.textContent = divide(a, b);
-            break;
+
         case "%":
-            display.textContent = remainder(a, b);
-            break;
+
     }
 }
