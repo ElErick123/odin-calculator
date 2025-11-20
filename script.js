@@ -104,6 +104,17 @@ operatorButtons.forEach((button) => {
     });
 });
 
+function showOnlyThreeDecimals(result) {
+    if (!result.toString().includes(".")) {
+        return result;
+    }
+    const decimals = result.toString().split(".")[1];
+    if (decimals.length >= 3) {
+        return Number(result).toFixed(3);
+    }
+    return result;
+}
+
 function operate(operator, a, b) {
     switch (operator) {
         case "+":
