@@ -6,6 +6,7 @@ const dotBtn = document.getElementById("dot-button");
 const delBtn = document.getElementById("del-button");
 const clearBtn = document.getElementById("clear-button");
 const operators = ["+", "-", "x", "/", "%", "="];
+const numbers = ["1", "2", "3", "4", "5", "6", "7", "8", "9", "0", "."];
 
 let firstNum = 0;
 let secondNum = 0;
@@ -13,11 +14,28 @@ let operator = "";
 let shouldResetDisplay = false;
 
 dotBtn.addEventListener("click", () => {
-
+    if (operator === "") {
+        if (!display.textContent.includes(".")) {
+            display.textContent += ".";
+        }
+    }
+    else {
+        let num = display.textContent.split(operator)[1].toString();
+        if (!num.includes(".")) {
+            display.textContent += ".";
+        }
+    }
 });
 
 anyBtn.forEach((button) => {
-
+    button.addEventListener("click", () => {
+        if (shouldResetDisplay && numbers.includes(button.textContent)) {
+            shouldResetDisplay = false;
+            display.textContent = "0";
+            return
+        }
+        shouldResetDisplay = false;
+    });
 });
 
 delBtn.addEventListener("click", () => {
